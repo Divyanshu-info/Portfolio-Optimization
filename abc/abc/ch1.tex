@@ -1,0 +1,87 @@
+\chapter{Introduction}
+\label{introchap}
+
+This chapter presents an overview about the context as a part of MiCas (Micro satellite
+et Reseau de capteur sans fils) project in section 1.1. In section 1.2 the problems and
+motivations are presented. Next, in section 1.3, due to the presented motivations, a
+research work flow is introduced step by step. Finally, in section 1.4, the research
+objectives are presented.
+
+\section{Context}
+The internship work is a part of MiCas project (Micro Satellite et Reseau de Capteur sans fils)
+in LabSTICC, UBO. Micas project objective is develop and experiment solutions to coordinate
+systems which will exchange data as well as control information between several distributed wireless
+sensor networks (WSN) and several ground stations by using low cost micro satellites. The project
+focus on a specification, verification and simulation of related situations : several distant WSN
+have their gateways visited periodically by a mobile (satellite) on a static path.
+
+\section{Problem/Motivation}
+\textbf{Wireless sensor network and sensors} : Wireless sensor network (WSN) is a network which
+implements many autonomous sensors to monitor physical or environmental conditions and passes
+the collection data to a main location [5]. Inside the WSN, there are many devices, named sensor
+can detect events or changes from environment and provides corresponding output. There are
+several kinds of environment data that a sensor can detect: temperature, humidity, light...[6]. In
+recent years, WSN is very important in environment monitoring, such as: air pollution, forest fire
+detection, landslide detection... \\
+\textbf{Distant WSN problem }: Most of the WSN projects is deployed in city (as example [7]), where
+communication systems are abundant. Otherwise, there are several WSN projects focus to the
+distant areas, such as shores, deserts, mountains, polar regions to monitor the environment changes.
+With this case, it is admitted that the radio connection from the sensor nodes to gateway can be
+lost or corrupted by effect of the environment. According to these problems, it is critical to propose
+a (several) solution(s) to collect data periodically to ensure the well operation of WSN. \\
+\textbf{Opportunities in Satellite cooperation} : Obviously, with the advances in Satellites or Unmanned
+aerial vehicle (UAV) technologies, the solution to collect data periodically of WSN can
+be achieved by implement Satellite or UAV. Generally, most of the satellite systems are industrial
+systems and closed for the research purposes like MiCas project. Fortunately, the low earth orbit
+satellites (LEO satellites) [8] like CubeSat are deployed in recent years can replace the industrial
+satellites for the research projects i.e QB50 project, Outernet project [9, 10], Micas project because
+at least two reasons: energy budget and solution cost. \\
+\textbf{Cooperation problem} : However, besides the advantages in cooperation between WSNs and
+CubeSat, there are several problems in data transaction:
+\begin{itemize}
+\item The correctly, reliable and adaptable protocols for data transaction between Satellite and
+WSN.
+\item An time event scheduler for WSN and satellite behaviors because they follow different sleeps
+and sampling periods.
+\item The limited buffering of the satellites to store and retrieve the data from ground stations. \\
+\textbf{Research motivation} As the result, for the cooperation between CubeSat and WSN, it is
+critical to build an application level simulation to develop and experiment the potentials as well
+as the risks before real deploying in environment. 
+\end{itemize}
+
+
+\section{Objectives}
+The objective of research is to approach the geo-modelisation, communication protocol development
+and simulation for the interaction between CubeSat and WSN. This work also relates
+to system investigations, based on the simulation of thousand of nodes in distant area, where
+CubeSat visits them, collects data, connects to ground stations and controls sensing operations.
+Consequently, during the internship, there are several objectives need to be achieved: \\
+\textbf{Geo-modelisation on QuickMap} : To model the geo location of WSN, CubeSat trajectory and
+the interactions between them. Moreover, in QuickMap, it allows to generate random network
+topology in specified area, to record satellite path based on tracked longitude, latitude from GPredict
+software (see chapter 2). \\
+\textbf{Protocol developing in Occam environment} To develop the communication protocols, we
+propose to use Occam structure because it uses micro threads and blocking channels ([11]) which
+are suitable for mono and multi-processors simulation of WSN (as shown in [12]) (see chapter 3). \\
+\textbf{Protocol implementing on GPGPU} : Meanwhile, the verified protocols will be implemented
+on GPGPU to simulate the sensing activity, the network activities, and interactions with satellites
+because GPGPU is attractive in synchronous message passing in WSN due to their Single Instruction
+Multiple Data - SIMD like architecture, shared memory (see chapter 4). In addition, it also
+useful to simulate the physical process due to the massive parallelism present in situations such as
+flooding, fires, pollution [13].
+
+\section{Research work flow}
+According to the research objectives, the report will describe the work flow as below: \\
+\textbf{Step 1} Using a map browser, QuickMap [14], to manage geo location of WSN and satellite trajectories
+and to model the interaction between them. A satellite tracking software, GPredict
+(see [15]), is used as an external process to passed the satellite paths and information to
+QuickMap (chapter 2) \\
+\textbf{Step 2} Using NetGen tool set [2] to generate the network topology from specification data of
+WSN fields and Satellite on QuickMap. The network topology can be generated into Occam
+structure or Compute Unified Device Architecture (CUDA) structure (chapter 2). \\
+\textbf{Step 3} Developing and analyzing the distributed protocol algorithms for the cooperation between
+Satellite and WSN based on generated Occam structure (chapter 3). \\
+\textbf{Step 4} Using these proposed algorithms to develop a simulation with CUDA architecture on
+General Purpose Graphic Processing Units (GPGPU) (chapter 4). Moreover, proposing a
+specific debugger interface which allows to manage the simulation execution at high level.
+

@@ -1,0 +1,56 @@
+\documentclass[12pt,oneside]{book}
+\usepackage[T1]{fontenc}
+\usepackage{geometry}
+\usepackage{epsfig}
+\geometry{verbose,a4paper,tmargin=25mm,bmargin=25mm,lmargin=32mm,rmargin=32mm}
+\usepackage{graphics}
+\usepackage{setspace}
+\usepackage{amsmath}
+\usepackage{enumerate}
+\usepackage{amssymb}
+\setcounter{secnumdepth}{5}
+\setcounter{tocdepth}{5}
+\onehalfspacing
+\usepackage{txfonts}
+%\usefont{T1}{tnr}{m}{sl}
+\makeatletter
+\makeatother
+\renewcommand{\contentsname}{TABLE OF CONTENTS}
+\renewcommand\listtablename{LIST OF TABLES}
+\renewcommand\listfigurename{LIST OF FIGURES}
+\renewcommand\bibname{REFERENCES}
+\usepackage[authoryear,round]{natbib}
+\renewcommand{\chaptername}{CHAPTER}
+%\renewcommand{\section}{\MakeUppercase}
+%\usepackage[authoryear,round]{natbib}
+%\usepackage[options]{natbib}
+\newtheorem{definition}{Definition}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Title Page
+\input{titlepage}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\setcounter{page}{1}
+\pagenumbering{roman}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\input{declaration}
+\input{abs}
+\input{ack}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\tableofcontents
+\addcontentsline{toc}{chapter}{LIST OF TABLES}
+\listoftables
+\addcontentsline{toc}{chapter}{LIST OF FIGURES}
+\listoffigures
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\input{abbr}
+\input{notations}
+\input{ch1}
+\input{ch2}
+\input{ch3}
+\input{ch4}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\setcitestyle{numbers}
+\addcontentsline{toc}{chapter}{REFERENCES}
+\bibliographystyle{kluwer}
+\bibliography{ref}
+\end{document}

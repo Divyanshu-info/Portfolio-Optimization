@@ -1,0 +1,99 @@
+\begin{thebibliography}{xx}
+
+\harvarditem{Bisnik and Abouzeid}{2009}{edtr7}
+Bisnik, N. and Abouzeid, A.: 2009, Queuing network models for delay analysis of
+  multihop wireless ad hoc networks, {\em ACM New York} {\bf 7},~773 -- 778.
+
+\harvarditem{C.Gomathy and S.Shanmugavel}{2004}{edtr}
+C.Gomathy and S.Shanmugavel: 2004, An efficient fuzzy based priority scheduler
+  for mobile ad hoc networks and performance analysis for various mobility
+  models, {\em IEEE Communications Society} {\bf 2},~1087 -- 1092.
+
+\harvarditem{Essam~Natsheh and Subramaniam}{2007}{edtr2}
+Essam~Natsheh, Adznan B.~Jantan, S.~K. and Subramaniam, S.: 2007, Fuzzy active
+  queue management for congestion control in wireless ad-hoc, {\em The
+  International Arab Journal of Information Technology} {\bf 4},~50 -- 59.
+
+\harvarditem[Kim et~al.]{Kim, Lee, Park and Park}{1998}{Kim199825}
+Kim, E., Lee, H., Park, M. and Park, M.: 1998, A simply identified
+  {S}ugeno-type fuzzy model via double clustering, {\em Information Sciences}
+  {\bf 110}(1-2),~25 -- 39.
+\newblock <ce:title>Special issue: Modeling with Soft-Computing</ce:title>.
+\newline\harvardurl{http://www.sciencedirect.com/science/article/pii/S00200255%
+97100834}
+
+\harvarditem{Leekwijck and Kerre}{1999}{Leekwijck1999159}
+Leekwijck, W.~V. and Kerre, E.~E.: 1999, Defuzzification: criteria and
+  classification, {\em Fuzzy Sets and Systems} {\bf 108}(2),~159 -- 178.
+\newline\harvardurl{http://www.sciencedirect.com/science/article/pii/S01650114%
+97003370}
+
+\harvarditem{Lotfi Asker~Zadeh and Yuan}{1996}{LotfiAskerZadeh1996}
+Lotfi Asker~Zadeh, J.~K. and Yuan, B.: 1996, {\em Fuzzy sets, fuzzy logic, and
+  fuzzy systems: selected papers}, World Scientific Publishing Co.
+
+\harvarditem{L.Rutkowski and K.Cpalka}{2003}{RutkowskiMay2003}
+L.Rutkowski and K.Cpalka: 2003, Flexible neuro-fuzzy systems, {\em IEEE
+  Transactions on Neural Networks} {\bf 14},~554 -- 574.
+
+\harvarditem{M.Hedayati and R.Shakerian}{2010}{edtr3}
+M.Hedayati, S. and R.Shakerian: 2010, A priority scheduler based {Q}o{S} for
+  dynamic source routing protocol using fuzzy logic in mobile ad-hoc network,
+  {\em Computer Technology and Development (ICCTD), 2010 2nd International
+  Conference on} pp.~374 -- 378.
+
+\harvarditem{Pedrycz}{1994}{edtr19}
+Pedrycz, W.: 1994, Why triangular membership functions?, {\em Fuzzy Sets and
+  Systems} {\bf 64},~21 -- 30.
+
+\harvarditem{Rajasekaran and Pai}{2009}{edtr10}
+Rajasekaran, S. and Pai, G. A.~V.: 2009, {\em Neural Networks, Fuzzy Logic and
+  Genetic Algorithms: Synthesis and Applications}, PHI Learning Pvt. Ltd.
+
+\harvarditem{Rajiv Kumar~Sharma and Kumar}{2005}{edtr8}
+Rajiv Kumar~Sharma, D.~K. and Kumar, P.: 2005, Methodology and theory {FLM} to
+  select suitable maintenance strategy in process industries using {MISO}
+  model, {\em Journal of Quality in Maintenance Engineering} {\bf 11},~359 --
+  374.
+
+\harvarditem{Rea and Pesch}{2004}{edtr13}
+Rea, S. and Pesch, D.: 2004, Multi-metric routing decisions for ad hoc networks
+  using fuzzy logic, {\em Wireless Communication Systems}, pp.~403--407.
+
+\harvarditem{Ross}{1995}{Ross1995}
+Ross, T.: 1995, {\em Fuzzy Logic with Engineering Applications}, McGraw-Hill.
+
+\harvarditem{Runtong~Zhang and Kouikoglou}{2004}{edtr5}
+Runtong~Zhang, Y. A.~P. and Kouikoglou, V.~S.: 2004, {\em Fuzzy control of
+  queuing systems}, Springer.
+
+\harvarditem{Thaw}{2010}{edtr1}
+Thaw, M.~M.: 2010, Fuzzy-based multi-constrained quality of service distance
+  vector routing protocol in mobile ad-hoc networks, {\em Computer and
+  Automation Engineering (ICCAE)}, Vol.~3, pp.~429 -- 433.
+
+\harvarditem{T.Sheu and H.Chen}{1999}{Sheu1999}
+T.Sheu, S. and H.Chen, M.: 1999, A fuzzy bandwidth allocation controller to
+  support real-time traffic over wireless network, {\em Proc. of IEEE Wireless
+  Communications and Networking Conference} {\bf 1},~1348--1352.
+
+\harvarditem{Tsoukalas and Uhrig}{1997}{Tsoukalas1997}
+Tsoukalas, L. and Uhrig, R.: 1997, {\em Fuzzy and Neural Applications in
+  Engineering}, Wiley.
+
+\harvarditem{Vikram~Kanodia and Knightly}{2002}{edtr14}
+Vikram~Kanodia, Chengzhi~Li, A. S. B.~S. and Knightly, E.: 2002, Distributed
+  priority scheduling and medium access in ad hoc networks, {\em Wireless
+  Networks} {\bf 8},~455--466.
+
+\harvarditem{Zadeh}{1965}{edtr20}
+Zadeh, L.~A.: 1965, Fuzzy sets, {\em Information and Control} {\bf 8}(3),~338
+  -- 353.
+\newline\harvardurl{http://www.sciencedirect.com/science/article/pii/S00199958%
+6590241X}
+
+\harvarditem{Zimmermann}{1996}{Zimmermann1996}
+Zimmermann, H.: 1996, {\em Fuzzy Set Theory and its Applications}, 3 edn,
+  Kluwer Academic Publishers, London.
+
+\end{thebibliography}
