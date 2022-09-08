@@ -3,3 +3,6 @@ yfinance
 numpy 
 backtrader 
 riskfolio-lib
+tensorflow_probability
+plotly
+pandas_datareader
