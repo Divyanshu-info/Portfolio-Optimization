@@ -7,6 +7,9 @@ import tensorflow.keras.backend as K
 from tensorflow.keras.layers.experimental import preprocessing
 import tensorflow_probability as tfp
 
+from tqdm.keras import TqdmCallback
+
+
 def pct_change(nparray):
     pct=np.zeros_like(nparray)
     a = nparray.T
@@ -79,8 +82,6 @@ class Model:
         
 
         self.model.fit(fit_predict_data, np.zeros((1, data.shape[1])), epochs=params['epochs'],
-                       shuffle=False, callbacks=[callback_early_stop,], verbose=1)
+                       shuffle=False, callbacks=[callback_early_stop, TqdmCallback()], verbose=0)
         
-
-
-        return self.model.predict(fit_predict_data)[0]
+        return self.model.predict(fit_predict_data, verbose=0)[0]
