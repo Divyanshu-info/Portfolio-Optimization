@@ -68,10 +68,19 @@ class Model:
         if self.model is None:
             self.model = self.__build_model(data_w_ret.shape, data.shape[1])
         
-        fit_predict_data = data_w_ret[np.newaxis,:]     
+        fit_predict_data = data_w_ret[np.newaxis, :]
 
-        callback_early_stop = tf.keras.callbacks.EarlyStopping(monitor='loss', patience=20)   
-        self.model.fit(fit_predict_data, np.zeros((1, data.shape[1])), epochs=params['epochs'], 
-        shuffle=False,callbacks=[callback_early_stop], verbose=0)
+
+
+
+
+        callback_early_stop = tf.keras.callbacks.EarlyStopping(
+        monitor='loss', patience=20)
+        
+
+        self.model.fit(fit_predict_data, np.zeros((1, data.shape[1])), epochs=params['epochs'],
+                       shuffle=False, callbacks=[callback_early_stop,], verbose=1)
+        
+
+
         return self.model.predict(fit_predict_data)[0]
-
