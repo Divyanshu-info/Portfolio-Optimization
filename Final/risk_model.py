@@ -76,7 +76,7 @@ class Model:
         callback_early_stop = tf.keras.callbacks.EarlyStopping(monitor='loss', patience=20)
         
         self.model.fit(fit_predict_data, np.zeros((1, data.shape[1])), epochs=params['epochs'],
-                       shuffle=False, callbacks=[callback_early_stop],  verbose=1, use_multiprocessing=True )
+                       shuffle=False, callbacks=[callback_early_stop, TqdmCallback()],  verbose=0, use_multiprocessing=True)
         
         return self.model.predict(fit_predict_data, verbose=0, use_multiprocessing=True)[0]
 #
