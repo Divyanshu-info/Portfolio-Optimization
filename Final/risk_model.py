@@ -23,7 +23,7 @@ def scale_0_1(data):
     return (data-np.min(data, axis=0))/(np.max(data, axis=0)-np.min(data, axis=0)+0.000000001)
 
 class Model:
-    def __init__(self, rnd_seed = 0):
+    def __init__(self, rnd_seed = 123):
         self.data = None
         self.model = None
         tf.random.set_seed(rnd_seed)
@@ -59,7 +59,7 @@ class Model:
             Dense(outputs, activation='softmax'),
         ])
  
-        model.compile(loss=sharpe_loss, optimizer=tf.keras.optimizers.Adam(learning_rate=0.01))
+        model.compile(loss=sharpe_loss, optimizer=tf.keras.optimizers.Adam(learning_rate=0.001))
         return model
 
     def get_allocations(self, data, **params):
