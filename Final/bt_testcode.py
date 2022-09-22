@@ -371,7 +371,8 @@ def backtest(cfg, strategy, plot=False, m_name='Test', **kwargs):
         m_name : { 
         'Max_Drawdown':thestrat.analyzers.getbyname('mydrawdown').get_analysis()['max']['drawdown'],
         'CAGR':thestrat.analyzers.getbyname('myreturn').get_analysis()['rnorm100'],
-        'Sharp_Ratio':thestrat.analyzers.getbyname('mysharpe').get_analysis()['sharperatio'],
+        'Sharp_Ratio':
+        thestrat.analyzers.getbyname('mysharpe').get_analysis()['sharperatio']*4,
         'Value': cerebro.broker.getvalue(),
         }
     }

@@ -10,3 +10,4 @@ pandas_datareader
 tqdm
 ipywidgets
 IProgress
+pydot

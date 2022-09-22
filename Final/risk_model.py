@@ -1,7 +1,7 @@
 import numpy as np
 import pandas as pd
 import tensorflow as tf
-from tensorflow.keras.layers import LSTM, Flatten, Dense
+from tensorflow.keras.layers import LSTM, Flatten, Dense, Dropout
 from tensorflow.keras.models import Sequential
 import tensorflow.keras.backend as K
 from tensorflow.keras.layers.experimental import preprocessing
@@ -9,6 +9,8 @@ import tensorflow_probability as tfp
 
 from tqdm.keras import TqdmCallback
 
+def process_sharpe(sharpe):
+    return -abs(sharpe)*8
 
 def pct_change(nparray):
     pct=np.zeros_like(nparray)
@@ -39,7 +41,6 @@ class Model:
         def sharpe_loss(_, y_pred):
             # make all time-series start at 1
             data = tf.divide(self.data, self.data[0])  
-                
             # value of the portfolio after allocations applied
             portfolio_values = tf.reduce_sum(tf.multiply(data, y_pred), axis=1)
             
@@ -55,16 +56,15 @@ class Model:
         model = Sequential([
             LSTM(64,  input_shape=input_shapes),
             Flatten(),
-            Dense(outputs, activation='softmax')
+            Dense(outputs, activation='softmax'),
         ])
  
-        model.compile(loss=sharpe_loss, optimizer=tf.keras.optimizers.Adam(learning_rate=0.1))
+        model.compile(loss=sharpe_loss, optimizer=tf.keras.optimizers.Adam(learning_rate=0.01))
         return model
 
     def get_allocations(self, data, **params):
     # data with returns
         data_w_ret = data_w_ret = np.concatenate([ scale_0_1(data[1:]), (pct_change(data))[1:] ], axis=1)
-        
         data = data[1:]
         self.data = tf.cast(tf.constant(data), float)
         
@@ -73,10 +73,10 @@ class Model:
         
         fit_predict_data = data_w_ret[np.newaxis, :]
         
-        callback_early_stop = tf.keras.callbacks.EarlyStopping(monitor='loss', patience=20)
+        callback_early_stop = tf.keras.callbacks.EarlyStopping(min_delta=0.001 ,monitor='loss', patience=20)
         
         self.model.fit(fit_predict_data, np.zeros((1, data.shape[1])), epochs=params['epochs'],
-                       shuffle=False, callbacks=[callback_early_stop, TqdmCallback()],  verbose=0, use_multiprocessing=True)
+                       shuffle=False, callbacks=[callback_early_stop],  verbose=1, workers=16, use_multiprocessing=True)
         
         return self.model.predict(fit_predict_data, verbose=0, use_multiprocessing=True)[0]
 #
